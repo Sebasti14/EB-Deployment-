@@ -23,7 +23,7 @@ ebdeploy:
   checkHealth: true
   
   # Jenkins credential id for AWS #
-  credentialId: 'awscred'
+  credentialId: 'ebjenkinscred'
   
   # Name of the Elastic beanstlk environment 
   # Can accept single or multiple comma-separated values
