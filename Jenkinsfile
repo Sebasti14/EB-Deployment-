@@ -1,4 +1,4 @@
-#!groovy
+
 
 import groovy.json.*
 
@@ -54,7 +54,7 @@ node {
 	
 	catch(exc) {
 		println "Build deploy failed"
-		currentBuild.result = FAILED
+		currentBuild.result = 'FAILED'
 	}
 }
 	
