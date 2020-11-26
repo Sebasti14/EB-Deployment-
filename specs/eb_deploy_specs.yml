@@ -1,0 +1,59 @@
+############################################
+Specs file for Elastic Beanstalk Deployment
+############################################
+
+ebdeploy:
+  
+  # Elastic beanstalk deployment plugin config file #
+  config: br.com.ingenieux.jenkins.plugins.awsebdeployment.AWSEBDeploymentConfig
+  
+  # Name of the EN application #
+  applicationName: 'test'
+  
+  # AWS region where the EB environment is located #
+  awsRegion: 'us-east-1'
+  
+  # (optional) Name of the S3 bucket to upload the zip file #
+  bucketName: 'eb-deploybucket'
+  
+  # Prefix for newly created apps on S3 Bucket
+  keyPrefix: ''
+  
+  # Check this to enable Health check on environment to turn 'Green' and then deploy #
+  checkHealth: true
+  
+  # Jenkins credential id for AWS #
+  credentialId: 'awscred'
+  
+  # Name of the Elastic beanstlk environment 
+  # Can accept single or multiple comma-separated values
+  # When this value is set and each requested environment exists, an UpdateEnvironment call will be triggered as the Application Version is created #
+  environmentName: 'Test-env'
+  
+  # Workspace-relative path of the artifact file to upload (if it's a file), or if it's a directory, the base directory to build the zip/war against #
+  rootObject: 'coretto'
+  
+  # Optional (if rootObject points to a directory): Glob for Zip Includes, comma-separated like 'target/file,target/myapp/**/*' #
+  includes: ''
+  
+  # Optional (if rootObject points to a directory): Glob for Zip Excludes, comma-separated eg '**/.git/**/*,**/node_modules/**/*' #
+  excludes: ''
+  
+  # Integer - No of retry attempts to update the environment #
+  maxAttempts: 3
+  
+  # To avoid environment updates.
+  skipEnvironmentUpdates: false
+  
+  # Seconds - Time to sleep between reties to update environment #
+  sleepTime: 30
+  
+  # Application version description #
+  versionDescriptionFormat: ''
+  
+  # Application version label to append to the application zip #
+  versionLabelFormat: 'v1-${BUILD_NUMBER}'
+  
+  # Perform environment update with no downtime. 
+  zeroDowntime: false
+  
