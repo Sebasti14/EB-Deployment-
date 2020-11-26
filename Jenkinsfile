@@ -16,7 +16,8 @@ node {
 			}
 		}
 	
-		specs = readYaml file: "${WORKSPACE}/specs/eb_deploy_specs.yml"
+		specs_read = readYaml file: "${WORKSPACE}/specs/eb_deploy_specs.yml"
+		specs = specs_read
 	
 		stage('EB deployment'){
 		    try {
