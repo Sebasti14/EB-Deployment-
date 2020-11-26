@@ -19,9 +19,9 @@ node {
 		specs = readYaml file: "${WORKSPACE}/specs/eb_deploy_specs.yml"
 	
 		stage('EB deployment'){
-		//withCredentials([usernamePassword(credentialsId: specs.ebdeploy.credentialsId, passwordVariable: 'awspasswd', usernameVariable: 'aws
-		//withAWS
 		    try {
+			    echo "*******************Elastic Beanstalk Deployment*******************"
+			    steps{
 			    step([
 				    $class: 'AWSEBDeploymentBuilder',
 				    config: specs.ebdeploy.config,
@@ -42,7 +42,8 @@ node {
 				    sleepTime: specs.ebdeploy.sleepTime,
 				    zeroDowntime: specs.ebdeploy.zeroDowntime
 				])
-			}
+			    }
+		        }
 			
 			catch(exc) {
 			    println "Error in EB deployment:" + e
