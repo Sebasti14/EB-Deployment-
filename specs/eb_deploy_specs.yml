@@ -31,7 +31,7 @@ ebdeploy:
   environmentName: 'Test-env'
   
   # Workspace-relative path of the artifact file to upload (if it's a file), or if it's a directory, the base directory to build the zip/war against #
-  rootObject: 'coretto'
+  rootObject: 'corretto'
   
   # Optional (if rootObject points to a directory): Glob for Zip Includes, comma-separated like 'target/file,target/myapp/**/*' #
   includes: ''
