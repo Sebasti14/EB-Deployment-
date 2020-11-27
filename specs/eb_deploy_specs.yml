@@ -52,7 +52,7 @@ ebdeploy:
   versionDescriptionFormat: ''
   
   # Application version label to append to the application zip #
-  versionLabelFormat: 'v1-${BUILD_NUMBER}'
+  versionLabelFormat: "v1-${BUILD_NUMBER}"
   
   # Perform environment update with no downtime. 
   zeroDowntime: false
