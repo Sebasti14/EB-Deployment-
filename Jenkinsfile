@@ -20,7 +20,7 @@ node {
 		specs = specs_read
 	
 		stage('EB deployment'){
-		    try {
+		    
 			echo "*******************Elastic Beanstalk Deployment*******************"
 			steps{
 			    step([
@@ -44,13 +44,13 @@ node {
 				    zeroDowntime: specs.ebdeploy.zeroDowntime
 				])
 			}
-		    }
+		    
 			
-		    catch(exc) {
-			println "Error in EB deployment:" + e
-			continuePipeline = false
-			throw e
-		    }
+		    //catch(exc) {
+			//println "Error in EB deployment:" + e
+			//continuePipeline = false
+			//throw e
+		    //}
 		}
 	}
 	
