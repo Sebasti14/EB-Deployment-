@@ -3,14 +3,15 @@
 import groovy.json.*
 
 node {
-	//try {
+	try {
 		stage('Code checkout'){
 		    try {
 			echo "**************Checkout code in SCM***********"
 			checkout scm
+			echo "**************Code checkout done**************"
 			}
 		    catch(exc) {
-			println "Error in checkout:" + e
+			println "Error in SCM checkout:" + e
 			continuePipeline = false
 			throw e
 			}
@@ -20,9 +21,8 @@ node {
 		specs = specs_read
 	
 		stage('EB deployment'){
-		    
+		    try {
 			echo "*******************Elastic Beanstalk Deployment*******************"
-			//steps{
 			    step([
 				    $class: 'AWSEBDeploymentBuilder',
 				    //config: specs.ebdeploy.config,
@@ -43,21 +43,19 @@ node {
 				    sleepTime: specs.ebdeploy.sleepTime,
 				    zeroDowntime: specs.ebdeploy.zeroDowntime
 				])
-			//}
-		    
-			
-		    //catch(exc) {
-			//println "Error in EB deployment:" + e
-			//continuePipeline = false
-			//throw e
-		    //}
+		    }
+		    catch(exc) {
+			println "Error in EB deployment:" + e
+			continuePipeline = false
+			throw e
+		    }
 		}
-	//}
+	}
 	
-	//catch(exc) {
-	    //println "Build deploy failed"
-	    //currentBuild.result = 'FAILED'
-	//}
+	catch(exc) {
+	    println "Build deploy failed"
+	    currentBuild.result = 'FAILED'
+	}
 }
 	
 	
