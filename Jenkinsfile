@@ -22,7 +22,7 @@ node {
 		stage('EB deployment'){
 		    
 			echo "*******************Elastic Beanstalk Deployment*******************"
-			steps{
+			//steps{
 			    step([
 				    $class: 'AWSEBDeploymentBuilder',
 				    config: specs.ebdeploy.config,
@@ -43,7 +43,7 @@ node {
 				    sleepTime: specs.ebdeploy.sleepTime,
 				    zeroDowntime: specs.ebdeploy.zeroDowntime
 				])
-			}
+			//}
 		    
 			
 		    //catch(exc) {
