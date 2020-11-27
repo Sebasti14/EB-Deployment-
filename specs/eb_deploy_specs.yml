@@ -5,7 +5,7 @@
 ebdeploy:
   
   # Elastic beanstalk deployment plugin config file #
-  config: 'br.com.ingenieux.jenkins.plugins.awsebdeployment.AWSEBDeploymentConfig'
+  config: br.com.ingenieux.jenkins.plugins.awsebdeployment.AWSEBDeploymentConfig
   
   # Name of the EN application #
   applicationName: 'test'
