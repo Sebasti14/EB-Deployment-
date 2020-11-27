@@ -52,12 +52,12 @@ node {
 			//throw e
 		    //}
 		}
-	}
+	//}
 	
-	catch(exc) {
-	    println "Build deploy failed"
-	    currentBuild.result = 'FAILED'
-	}
+	//catch(exc) {
+	    //println "Build deploy failed"
+	    //currentBuild.result = 'FAILED'
+	//}
 }
 	
 	
