@@ -3,7 +3,7 @@
 import groovy.json.*
 
 node {
-	try {
+	//try {
 		stage('Code checkout'){
 		    try {
 			echo "**************Checkout code in SCM***********"
