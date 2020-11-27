@@ -25,7 +25,7 @@ node {
 			//steps{
 			    step([
 				    $class: 'AWSEBDeploymentBuilder',
-				    config: specs.ebdeploy.config,
+				    //config: specs.ebdeploy.config,
 				    awsRegion: specs.ebdeploy.awsRegion,
 				    credentialId: specs.ebdeploy.credentialId,
 				    environmentName: specs.ebdeploy.environmentName,
